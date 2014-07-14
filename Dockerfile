@@ -12,5 +12,5 @@ ENV RAILS_ENV production
 VOLUME /srv/rails_admin_example2/log
 
 RUN bundle install
-RUN bundle exec rake db:drop db:seed assets:precompile
+RUN bundle exec rake db:drop db:seed
 CMD bundle exec rails server thin
