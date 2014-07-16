@@ -7,7 +7,7 @@
 # docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -d mysql
 #
 # 2. イメージ作成時
-# rm -rf public/assets && bundle exec rake assets:clean assets:precompile && docker build -t="rails_admin_example2" .
+# rm -rf public/assets && bundle exec rake assets:clean assets:precompile && docker build -t="groovenauts/rails_admin_example" .
 #
 # 3. DB初期化時
 # docker run --link mysql:mysql  -v /var/log/app:/usr/src/app/log:rw rails_admin_example2 bundle exec rake db:drop db:create db:migrate db:seed
@@ -16,7 +16,7 @@
 # export SECRET_KEY_BASE="67a1f3d844483f15e48f7607c6c7ef17785904470198d311bfdbd39d9f8b5997620a995a667d061539cafdeb48d1838a51f1d6ceb0e96e92b1e48b36f71afd97"
 #
 # 5. 実行
-# docker run --link mysql:mysql -p 3000:3000 -v /var/log/app:/usr/src/app/log:rw -e SECRET_KEY_BASE=$SECRET_KEY_BASE -d -t rails_admin_example2 bundle exec rails server webrick
+# docker run --link mysql:mysql -p 3000:3000 -v /var/log/app:/usr/src/app/log:rw -e SECRET_KEY_BASE=$SECRET_KEY_BASE -d -t groovenauts/rails_admin_example bundle exec rails server webrick
 #
 # 6. 確認
 # 6-1. boot2dockerを使っている場合
