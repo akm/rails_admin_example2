@@ -43,15 +43,21 @@
 #      rm /usr/src/app/log/text.txt
 #
 
-FROM ruby
+FROM groovenauts/ruby:2.1.2
 MAINTAINER t-akima@groovenauts.jp
 
 ENV RAILS_ENV production
 
 EXPOSE 3000
 
-VOLUME /usr/src/app/log
+ADD . /usr/src/app
 WORKDIR /usr/src/app
+VOLUME /usr/src/app/log
+
+RUN bundle install --system
+
+CMD ["bundle", "exec", "rails", "server"]
 
 # CMD ["rails", "server", "thin"]
 # ENTRYPOINT ["/usr/local/bin/bundle exec"]
+
