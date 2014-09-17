@@ -7,7 +7,7 @@
 # docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -d mysql
 #
 # 2. イメージ作成時
-# rm -rf public/assets && bundle exec rake assets:clean assets:precompile && docker build -t="groovenauts/rails_admin_example" .
+# rm -rf public/assets && bundle exec rake assets:clean assets:precompile && docker build -t rails_admin_example2 .
 #
 # 3. DB初期化時
 # docker run --link mysql:mysql  -v /var/log/app:/usr/src/app/log:rw rails_admin_example2 bundle exec rake db:drop db:create db:migrate db:seed
